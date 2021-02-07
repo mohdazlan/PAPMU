@@ -1,0 +1,26 @@
+{
+  "name": "papmu-x",
+  "version": "1.0.0",
+  "description": "Persatuan Alumni Politeknik Mukah",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Persatuan",
+    "Politeknik",
+    "Mukah",
+    "Mohd",
+    "Azlan",
+    "Ab",
+    "Aziz",
+    "Hasnah",
+    "Ngah",
+    "Rozaida"
+  ],
+  "author": "Mohd Azlan Ab Aziz",
+  "license": "ISC",
+  "dependencies": {
+    "helmet": "4.4.1"
+  }
+}
