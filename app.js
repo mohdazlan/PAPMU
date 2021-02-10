@@ -5,8 +5,12 @@ const projectRouter = require('./routes/projectRoutes');
 const userRouter = require('./routes/userRoutes');
 
 const app = express();
+app.use(express.static(`${__dirname}/public`));
 
-app.use(morgan('combined'));
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
+
 app.use(express.json());
 
 app.use((req, res, next) => {
