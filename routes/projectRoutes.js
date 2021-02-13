@@ -1,6 +1,11 @@
 const express = require('express');
 const projectController = require('../controllers/projectController');
+
 const router = express.Router();
+
+router
+  .route('/top-5-exciting')
+  .get(projectController.aliasTopProjects, projectController.getAllProjects);
 
 router
   .route('/')
