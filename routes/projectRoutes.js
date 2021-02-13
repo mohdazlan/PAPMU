@@ -7,6 +7,8 @@ router
   .route('/top-5-exciting')
   .get(projectController.aliasTopProjects, projectController.getAllProjects);
 
+router.route('/project-stats').get(projectController.getProjectStats);
+
 router
   .route('/')
   .get(projectController.getAllProjects)

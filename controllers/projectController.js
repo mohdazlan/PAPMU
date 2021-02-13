@@ -1,5 +1,5 @@
 const Project = require('../models/projectModel');
-const APIFeatures = require('./../utils/apiFeatures');
+const APIFeatures = require('../utils/apiFeatures');
 
 exports.aliasTopProjects = (req, res, next) => {
   req.query.limit = '5';
@@ -108,5 +108,31 @@ exports.deleteProject = async (req, res) => {
   res.status(204).json({
     status: 'success',
     data: null,
+  });
+};
+
+exports.getProjectStats = async (req, res) => {
+  const stats = await Project.aggregate([
+    {
+      $match: { ratingsAverage: { $gte: 3.0 } },
+    },
+    {
+      $group: {
+        _id: '$difficulty',
+        numTours: { $sum: 1 },
+        numRatings: { $sum: '$ratingsQuantity' },
+        avgRating: { $avg: '$ratingsAverage' },
+        avgDonation: { $avg: '$donation' },
+        minDonation: { $min: '$donation' },
+        maxDonation: { $max: '$donation' },
+      },
+    },
+    { $sort: { avgDonation: 1 } },
+  ]);
+  res.status(200).json({
+    status: 'success',
+    data: {
+      stats,
+    },
   });
 };
