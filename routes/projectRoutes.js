@@ -8,6 +8,7 @@ router
   .get(projectController.aliasTopProjects, projectController.getAllProjects);
 
 router.route('/project-stats').get(projectController.getProjectStats);
+router.route('/monthly-plan/:year').get(projectController.getMonthlyPlan);
 
 router
   .route('/')

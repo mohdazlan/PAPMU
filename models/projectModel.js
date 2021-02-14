@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const slugify = require('slugify');
 
 const projectSchema = new mongoose.Schema({
   name: {
@@ -6,7 +7,7 @@ const projectSchema = new mongoose.Schema({
     required: [true, 'A project must have a name'],
     unique: true,
   },
-  durations: {
+  duration: {
     type: Number,
   },
   maxGroupSize: {
@@ -47,6 +48,10 @@ const projectSchema = new mongoose.Schema({
     default: Date.now(),
   },
   startDates: [Date],
+});
+
+projectSchema.virtual('durationWeeks').get(function () {
+  return this.duration / 7;
 });
 
 const Project = mongoose.model('Project', projectSchema);
