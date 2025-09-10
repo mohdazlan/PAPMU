@@ -1,35 +1,39 @@
 import React from "react";
-import { FlatList, Image, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-const MENTORS = [
-  { id: "m1", name: "Ahmad bin Hassan", field: "Engineering", bio: "Lead Mechanical Engineer, 10+ yrs", avatar: "https://i.pravatar.cc/100?img=5" },
-  { id: "m2", name: "Nurul binti Ismail", field: "Business", bio: "E-commerce startup founder", avatar: "https://i.pravatar.cc/100?img=49" },
-  { id: "m3", name: "Chong Wei Ling", field: "Technology", bio: "Software developer at tech company", avatar: "https://i.pravatar.cc/100?img=26" },
-];
+export default function Profile() {
+  const insets = useSafeAreaInsets();
 
-export default function Mentorship() {
   return (
-    <FlatList
-      contentContainerStyle={{ padding: 16 }}
-      data={MENTORS}
-      keyExtractor={(i) => i.id}
-      renderItem={({ item }) => (
-        <View style={styles.card}>
-          <Image source={{ uri: item.avatar }} style={styles.avatar} />
-          <View style={{ flex: 1 }}>
-            <Text style={styles.name}>{item.name}</Text>
-            <Text style={styles.sub}>{item.field}</Text>
-            <Text style={styles.sub}>{item.bio}</Text>
-          </View>
-        </View>
-      )}
-    />
+    <ScrollView
+      contentContainerStyle={{
+        paddingTop: insets.top + 12,
+        paddingBottom: insets.bottom + 24,
+        paddingHorizontal: 16,
+      }}
+    >
+      <Text style={styles.title}>Ahmad Zaki</Text>
+      <Text>Class of 2018 • Mechanical Engineering</Text>
+
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>About</Text>
+        <Text>Email: ahmad.zaki@example.com</Text>
+        <Text>Phone: +60 12-3456789</Text>
+        <Text>Location: Mukah, Sarawak</Text>
+      </View>
+
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Experience</Text>
+        <Text>• Petronas · Mechanical Engineer</Text>
+        <Text>• InfinioTech · Project Manager</Text>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  card: { flexDirection: "row", gap: 12, padding: 12, borderRadius: 14, backgroundColor: "#fff", marginBottom: 12, elevation: 1 },
-  avatar: { width: 44, height: 44, borderRadius: 22 },
-  name: { fontSize: 16, fontWeight: "700" },
-  sub: { color: "#64748B", marginTop: 2 },
+  title: { fontSize: 22, fontWeight: "800", marginBottom: 8 },
+  section: { padding: 12, borderRadius: 12, backgroundColor: "#fff", elevation: 1, marginTop: 10 },
+  sectionTitle: { fontWeight: "700", marginBottom: 6 },
 });

@@ -8,6 +8,8 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import 'react-native-reanimated';
 
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
 // Keep native splash visible until index.tsx hides it
 SplashScreen.preventAutoHideAsync().catch(() => {});
 
@@ -20,6 +22,7 @@ export default function RootLayout() {
   if (!loaded) return null;
 
   return (
+     <SafeAreaProvider>
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack screenOptions={{ headerShown: false }}>
         {/* Loader (app/index.tsx) shows first */}
@@ -31,5 +34,6 @@ export default function RootLayout() {
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>
+    </SafeAreaProvider>
   );
 }

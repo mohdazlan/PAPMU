@@ -1,5 +1,6 @@
 import React from "react";
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const EVENTS = [
   { id: "e1", title: "Alumni Networking Mixer", when: "Sat, 25 Oct 2024 · 10:00 AM", where: "Politeknik Mukah Hall" },
@@ -8,17 +9,25 @@ const EVENTS = [
 ];
 
 export default function Events() {
+  const insets = useSafeAreaInsets();
+
   return (
     <FlatList
-      contentContainerStyle={{ padding: 16 }}
       data={EVENTS}
       keyExtractor={(i) => i.id}
+      contentContainerStyle={{
+        paddingTop: insets.top + 8,
+        paddingBottom: insets.bottom + 16,
+        paddingHorizontal: 16,
+      }}
       renderItem={({ item }) => (
         <View style={styles.card}>
           <Text style={styles.title}>{item.title}</Text>
           <Text style={styles.sub}>{item.when}</Text>
           <Text style={styles.sub}>{item.where}</Text>
-          <TouchableOpacity style={styles.rsvp}><Text style={styles.rsvpText}>RSVP</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.rsvp}>
+            <Text style={styles.rsvpText}>RSVP</Text>
+          </TouchableOpacity>
         </View>
       )}
     />

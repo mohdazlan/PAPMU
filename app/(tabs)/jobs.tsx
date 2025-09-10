@@ -1,5 +1,6 @@
 import React from "react";
 import { FlatList, Image, StyleSheet, Text, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const JOBS = [
   { id: "j1", title: "Software Engineer", company: "Tech Solutions", city: "Kuala Lumpur", cover: "https://picsum.photos/seed/papmu1/90/60" },
@@ -8,11 +9,17 @@ const JOBS = [
 ];
 
 export default function Jobs() {
+  const insets = useSafeAreaInsets();
+
   return (
     <FlatList
-      contentContainerStyle={{ padding: 16 }}
       data={JOBS}
       keyExtractor={(i) => i.id}
+      contentContainerStyle={{
+        paddingTop: insets.top + 8,
+        paddingBottom: insets.bottom + 16,
+        paddingHorizontal: 16,
+      }}
       renderItem={({ item }) => (
         <View style={styles.card}>
           <View style={{ flex: 1 }}>
