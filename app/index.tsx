@@ -28,7 +28,7 @@ export default function LoadingScreen() {
     })();
 
     const toTabs = setTimeout(() => {
-      router.replace("/(tabs)");
+      router.replace("/(tabs)/profile");
     }, 5000); // ← adjust duration (ms)
 
     return () => clearTimeout(toTabs);
