@@ -1,50 +1,95 @@
-# Welcome to your Expo app 👋
+# PAPMU 📱  
+**Politeknik Mukah Alumni Mobile App**  
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+[![Expo](https://img.shields.io/badge/Expo-SDK_51-000.svg?style=flat&logo=expo)](https://expo.dev)  
+[![React Native](https://img.shields.io/badge/React_Native-0.74-blue?style=flat&logo=react)](https://reactnative.dev/)  
+[![Platform](https://img.shields.io/badge/Platform-Android_|_iOS-green?style=flat&logo=android)](https://expo.dev)  
+[![License](https://img.shields.io/badge/License-Private-red.svg)](#license)  
 
-## Get started
+> Connecting past, present, and future — empowering the Politeknik Mukah alumni network through technology.  
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 🌟 Why PAPMU?  
+Alumni communities are often scattered across WhatsApp groups, Facebook pages, and informal meetups. **PAPMU** brings everything into one dedicated platform:  
 
-2. Start the app
+- 🎓 **For Students**: Mentorship, internships, and career opportunities.  
+- 👩‍🎓 **For Alumni**: A powerful network to stay connected, find jobs, and give back.  
+- 🏫 **For Politeknik Mukah**: A single alumni platform to strengthen ties and showcase success stories.  
 
-   ```bash
-   npx expo start
-   ```
+PAPMU isn’t just another app — it’s the **digital heartbeat of the Politeknik Mukah community**.  
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## ✨ Features
+- **Alumni Directory** 🧑‍🤝‍🧑  
+- **Job Board** 💼  
+- **Events Calendar** 📅  
+- **Mentorship** 🤝  
+- **Profile Management** 👤  
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 🛠️ Technology Stack
+- **Frontend**: [React Native](https://reactnative.dev/) via [Expo](https://expo.dev/)  
+- **Navigation**: [Expo Router](https://expo.github.io/router)  
+- **Backend (future-ready)**: [Supabase](https://supabase.com/) / [Firebase](https://firebase.google.com/)  
+- **Icons & UI**: [Ionicons](https://ionic.io/ionicons)  
+- **Deployment**: [EAS Build](https://docs.expo.dev/build/introduction/)  
+- **Version Control**: GitHub  
 
-When you're ready, run:
+---
+
+## 🚀 Roadmap
+- ✅ Core alumni directory  
+- ✅ Job board (Phase 1)  
+- ✅ Events calendar  
+- 🚧 Mentorship matching algorithm  
+- 🚧 Push notifications  
+- 🚧 Profile picture uploads  
+- 🚧 Admin dashboard (web)  
+
+---
+
+## 📈 Why It Matters
+PAPMU is not just an app — it’s an **ecosystem for Politeknik Mukah’s alumni**:  
+
+- Builds a **sustainable alumni network**.  
+- Encourages **career growth** and **mentorship culture**.  
+- Strengthens Politeknik Mukah’s brand through alumni success.  
+- Opens pathways for **funding, collaboration, and industry partnerships**.  
+
+---
+
+## 🧑‍💻 For Developers
+Clone & run locally:
 
 ```bash
-npm run reset-project
+git clone https://github.com/<your-username>/PAPMU.git
+cd PAPMU
+npm install
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Build a local debug APK:
 
-## Learn more
+```bash
+npx expo prebuild --platform android
+npx expo run:android
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Build a Play Store–ready AAB:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+eas build -p android --profile production
+```
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## 📜 License
+This project is part of Politeknik Mukah’s alumni initiative.  
+© 2025 PAPMU Team. All rights reserved.  
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+💡 *Built with love and code to empower Politeknik Mukah’s alumni.*  
